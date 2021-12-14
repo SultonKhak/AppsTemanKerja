@@ -43,6 +43,12 @@
     <string name="keterampilan">Keterampilan</string>
     <string name="save">Save</string>
     <string name="dot">...</string>
+    <string name="company_name">Nama Perusahaan</string>
+    <string name="company_type">Jenis Perusahaan</string>
+    <string name="jobdesk">Posisi Pekerjaan</string>
+    <string name="gaji">Gaji</string>
+    <string name="work_schedule">Jadwal Kerja</string>
+    <string name="deskripsi">Deskripsi</string>
 
     <string-array name="sertifikasi_title">
         <item>Android Developer</item>
