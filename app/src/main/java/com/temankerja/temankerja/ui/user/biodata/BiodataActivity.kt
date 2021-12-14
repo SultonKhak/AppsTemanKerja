@@ -47,7 +47,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
             if (it.data != null) {
                 id = it.data!!.id!!
                 binding.apply {
-                    tvFullnameData.setText(it.data?.fullname)
+                    tvUsernameData.setText(it.data?.fullname)
                     tvAddressData.setText(it.data?.address)
                     tvNoKtpData.setText(it.data?.noKtp)
                     tvNoTelpData.setText(it.data?.phone)
@@ -75,7 +75,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                         id,
                         binding.tvAddressData.text.toString(),
                         "",
-                        binding.tvFullnameData.text.toString(),
+                        binding.tvUsernameData.text.toString(),
                         "Laki-Laki",
                         binding.tvNoKtpData.text.toString(),
                         "",
@@ -133,7 +133,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                                                 id,
                                                 binding.tvAddressData.text.toString(),
                                                 "",
-                                                binding.tvFullnameData.text.toString(),
+                                                binding.tvUsernameData.text.toString(),
                                                 "Laki-Laki",
                                                 binding.tvNoKtpData.text.toString(),
                                                 "",
