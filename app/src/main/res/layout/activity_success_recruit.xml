@@ -9,7 +9,7 @@
       android:id="@+id/imageView"
       android:layout_width="225dp"
       android:layout_height="225dp"
-      android:src="@drawable/ikon_sukses"
+      android:src="@drawable/success"
       app:layout_constraintBottom_toBottomOf="@+id/imageView2"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
