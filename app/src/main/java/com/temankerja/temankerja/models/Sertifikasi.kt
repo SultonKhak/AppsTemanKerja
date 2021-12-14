@@ -6,6 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Sertifikasi(
     val title: String = "",
-    val desc: String = "",
-    val photo: Int = 0
+    val deskripsi: String = "",
+    val img: String? = "",
 ) : Parcelable

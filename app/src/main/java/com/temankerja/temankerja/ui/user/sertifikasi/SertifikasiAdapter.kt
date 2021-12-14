@@ -7,10 +7,12 @@ import com.bumptech.glide.Glide
 import com.temankerja.temankerja.models.Sertifikasi
 import com.temankerja.temankerja.databinding.ListSertifikasiBinding
 
-class SertifikasiAdapter(private val listSertifikasi: ArrayList<Sertifikasi>) : RecyclerView.Adapter<SertifikasiAdapter.ListViewHolder>() {
+class SertifikasiAdapter() : RecyclerView.Adapter<SertifikasiAdapter.ListViewHolder>() {
     inner class ListViewHolder (val binding: ListSertifikasiBinding) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
+    private var sertifikasiData = mutableListOf<Sertifikasi>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SertifikasiAdapter.ListViewHolder {
         return ListViewHolder(
             ListSertifikasiBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -20,19 +22,22 @@ class SertifikasiAdapter(private val listSertifikasi: ArrayList<Sertifikasi>) : 
         )
     }
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val sertifikasi = listSertifikasi[position]
-        holder.binding.sertifikasiTitle.text = sertifikasi.title
-        holder.binding.sertifikasiDesc.text = sertifikasi.desc
+    fun setSertifikasiData(list: List<Sertifikasi>){
+        sertifikasiData.clear()
+        sertifikasiData = list.toMutableList()
+        notifyDataSetChanged()
+    }
+
+    override fun onBindViewHolder(holder: SertifikasiAdapter.ListViewHolder, position: Int) {
+        val info = sertifikasiData[position]
+        holder.binding.sertifikasiTitle.text = info.title
+        holder.binding.sertifikasiDesc.text = info.deskripsi
         Glide.with(holder.itemView.context)
-            .load(sertifikasi.photo)
+            .load(info.img)
             .into(holder.binding.sertifikasiImg)
-//        holder.itemView.setOnClickListener {
-//
-//        }
     }
 
     override fun getItemCount(): Int {
-        return listSertifikasi.size
+        return sertifikasiData.size
     }
 }

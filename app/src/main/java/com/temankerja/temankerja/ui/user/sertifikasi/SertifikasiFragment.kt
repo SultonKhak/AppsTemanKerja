@@ -5,16 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.temankerja.temankerja.databinding.FragmentSertifikasiBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.temankerja.temankerja.R
+import com.temankerja.temankerja.databinding.FragmentInformasiBinding
 import com.temankerja.temankerja.models.Sertifikasi
+import com.temankerja.temankerja.ui.user.informasi.InformasiAdapter
+import com.temankerja.temankerja.ui.user.informasi.InformasiViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class SertifikasiFragment : Fragment() {
+
     private var _binding : FragmentSertifikasiBinding? = null
     private val binding get() = _binding!!
-    private var listSertifikasi : ArrayList<Sertifikasi> = arrayListOf()
+    private val adapter by lazy { SertifikasiAdapter() }
+    private val viewModel: SertifikasiViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,36 +32,24 @@ class SertifikasiFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.rvSertifikasi.setHasFixedSize(true)
-        listSertifikasi.addAll(getSertifikasi())
-        showRecyclerList()
+        setupRv()
+        activity?.let {
+            viewModel.data.observe(it, {
+                it.data?.let { data -> adapter.setSertifikasiData(data) }
+            })
+        }
         super.onViewCreated(view, savedInstanceState)
     }
 
-    fun getSertifikasi() : ArrayList<Sertifikasi> {
-        val title = resources.getStringArray(R.array.sertifikasi_title)
-        val desc = resources.getStringArray(R.array.sertifikasi_desc)
-        val photo = resources.obtainTypedArray(R.array.sertifikasi_photo)
-        val listSertifikasiTemp = ArrayList<Sertifikasi>()
-        for (position in title.indices) {
-            val sertifikasi = Sertifikasi(
-                title[position],
-                desc[position],
-                photo.getResourceId(position, -1)
-            )
-            listSertifikasiTemp.add(sertifikasi)
-        }
-        return listSertifikasiTemp
-    }
-
-    private fun showRecyclerList() {
-        binding.rvSertifikasi.layoutManager = LinearLayoutManager(context)
-        val adapter = SertifikasiAdapter(listSertifikasi)
+    private fun setupRv() {
         binding.rvSertifikasi.adapter = adapter
+        binding.rvSertifikasi.layoutManager = LinearLayoutManager(context)
+        binding.rvSertifikasi.setHasFixedSize(true)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }
