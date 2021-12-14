@@ -3,6 +3,7 @@ package com.temankerja.temankerja.ui.success
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.firebase.firestore.auth.User
 import com.temankerja.temankerja.R
 import com.temankerja.temankerja.databinding.ActivitySuccessBinding
 import com.temankerja.temankerja.ui.recruiter.RecruiterActivity
@@ -34,5 +35,10 @@ class SuccessActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, UserActivity::class.java))
     }
 }

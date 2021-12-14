@@ -17,15 +17,17 @@
             android:id="@+id/drawer_about"
             android:title="About Us"
             android:icon="@drawable/ic_baseline_group_24"/>
+        <item
+            android:id="@+id/drawer_switch"
+            android:title="Switch Role"
+            android:icon="@drawable/ic_baseline_switch"/>
 
     </group>
     <group android:checkableBehavior="single">
-
         <item
             android:id="@+id/drawer_logout"
             android:title="Logout"
             android:icon="@drawable/ic_baseline_exit_to_app_24"/>
-
     </group>
 
 </menu>

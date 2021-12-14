@@ -3,11 +3,13 @@ package com.temankerja.temankerja.ui.user.detailbiodata
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
 import com.bumptech.glide.Glide
 import com.temankerja.temankerja.R
 import com.temankerja.temankerja.databinding.ActivityDetailBiodataBinding
+import com.temankerja.temankerja.ui.user.UserActivity
 import com.temankerja.temankerja.ui.user.biodata.BiodataActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -54,8 +56,18 @@ class DetailBiodataActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                startActivity(Intent(this, UserActivity::class.java))
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, UserActivity::class.java))
     }
 }

@@ -20,6 +20,7 @@ import com.temankerja.temankerja.data.UserPreference
 import com.temankerja.temankerja.databinding.ActivityUserBinding
 import com.temankerja.temankerja.models.Users
 import com.temankerja.temankerja.ui.AboutUsActivity
+import com.temankerja.temankerja.ui.MainActivity
 import com.temankerja.temankerja.ui.change.ChangeActivity
 import com.temankerja.temankerja.ui.login.LoginActivity
 import com.temankerja.temankerja.ui.user.biodata.BiodataActivity
@@ -91,6 +92,7 @@ class UserActivity : AppCompatActivity() {
                 }
                 R.id.drawer_about -> startActivity(Intent(this, AboutUsActivity::class.java))
                 R.id.drawer_setting -> startActivity(Intent(this, ChangeActivity::class.java))
+                R.id.drawer_switch -> startActivity(Intent(this, MainActivity::class.java))
                 R.id.drawer_logout -> {
                     Intent(this,  LoginActivity::class.java).apply {
                         userPreference.setUser(Users(), AuthType.LOGOUT)

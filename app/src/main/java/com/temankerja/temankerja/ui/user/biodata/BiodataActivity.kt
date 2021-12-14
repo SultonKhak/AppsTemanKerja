@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -17,6 +18,7 @@ import com.google.firebase.storage.ktx.storage
 import com.temankerja.temankerja.R
 import com.temankerja.temankerja.databinding.ActivityBiodataBinding
 import com.temankerja.temankerja.models.Users
+import com.temankerja.temankerja.ui.user.detailbiodata.DetailBiodataActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -89,6 +91,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                                 "Data successfuly updated!",
                                 Toast.LENGTH_SHORT
                             ).show()
+                            startActivity(Intent(this, DetailBiodataActivity::class.java))
                         }
                     })
                 }else{
@@ -147,6 +150,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                                                         "Data successfuly updated!",
                                                         Toast.LENGTH_SHORT
                                                     ).show()
+
                                                 }
                                             })
                                         }
@@ -177,6 +181,21 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (item.itemId) {
+//            android.R.id.home -> {
+//                startActivity(Intent(this, DetailBiodataActivity::class.java))
+//                return true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
+//
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+//        startActivity(Intent(this, DetailBiodataActivity::class.java))
+//    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
