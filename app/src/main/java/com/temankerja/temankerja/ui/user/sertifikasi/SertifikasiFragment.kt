@@ -8,11 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.temankerja.temankerja.databinding.FragmentSertifikasiBinding
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.temankerja.temankerja.R
-import com.temankerja.temankerja.databinding.FragmentInformasiBinding
-import com.temankerja.temankerja.models.Sertifikasi
-import com.temankerja.temankerja.ui.user.informasi.InformasiAdapter
-import com.temankerja.temankerja.ui.user.informasi.InformasiViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
