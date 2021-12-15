@@ -25,6 +25,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="62dp"
         android:fontFamily="@font/inter_regular"
+        android:textColor="@color/black"
         android:gravity="center"
         android:text="@string/desc_main"
         android:textSize="14sp"

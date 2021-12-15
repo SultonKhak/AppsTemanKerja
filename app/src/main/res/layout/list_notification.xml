@@ -23,6 +23,7 @@
                 android:fontFamily="@font/inter_bold"
                 android:text="@string/selamat_anda_di_terima_sebagai_software_engineer_di_google"
                 android:textSize="14sp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
