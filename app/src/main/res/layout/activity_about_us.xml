@@ -13,17 +13,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="150dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/temankerja"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.589" />
+
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="152dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/inter_regular"
-        android:text="@string/lorem_ipsum"
+        android:justificationMode="inter_word"
+        android:text="Aplikasi TemanKerja merupakan aplikasi pencari pekerjaan yang berfokus dalam membantu para masyarakat dengan background pendidikan sekolah menengah sederajat dalam mencari pekerjaan. Dalam aplikasi ini, user juga bisa memberikan lowongan pekerjaan sesuai dengan kebutuhan.
+\n\nFitur aplikasi:\n1. User bisa mencari informasi sertifikasi keahlian yang ingin diikuti\n
+2. User bisa mencari informasi bursa kerja yang ada di Indonesia."
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_include" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/desc_wallpaper_screen"
+        android:src="@drawable/splashscreen_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
