@@ -44,7 +44,6 @@ class SertifikasiFragment : Fragment() {
             override fun onItemClicked(data: Sertifikasi) {
                 val intent = Intent(Intent.ACTION_VIEW).setData(Uri.parse(data.link));
                 startActivity(intent)
-                Log.e("TAG", "Link: $data.link", )
             }
         })
         super.onViewCreated(view, savedInstanceState)

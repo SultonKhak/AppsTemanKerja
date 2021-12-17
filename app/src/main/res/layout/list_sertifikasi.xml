@@ -26,19 +26,20 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
-                app:cardCornerRadius="20dp"
+                android:layout_width="110dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sertifikasi_desc"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="@+id/sertifikasi_title">
 
                 <ImageView
                     android:id="@+id/sertifikasi_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:contentDescription="@string/image_home"
+                    android:scaleType="fitXY"
                     android:src="@color/blue" />
 
             </androidx.cardview.widget.CardView>
