@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TemanKerja">
         <activity
+            android:name=".ui.user.informasi.DetailInformasiActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.change.ChangeActivity"
             android:exported="false" />
         <activity
@@ -66,4 +69,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
