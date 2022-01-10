@@ -8,7 +8,7 @@
     <string name="hint_nama_pengguna">Nama Pengguna</string>
     <string name="hint_email">Email</string>
     <string name="hint_kata_sandi">Kata Sandi</string>
-    <string name="hint_repassword">Konfirmasi Kata Sandi</string>
+    <string name="hint_repassword">Confirm Password</string>
     <string name="register">Register</string>
     <string name="desc_main">Penyedia Pekerja dan Pekerjaan untuk Lulusan SMP dan SMA</string>
     <string name="saya_ingin_bekerja">Saya Ingin Bekerja</string>
