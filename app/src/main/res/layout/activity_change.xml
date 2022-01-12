@@ -68,7 +68,7 @@
             android:id="@+id/tv_password_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
+            android:hint="@string/kata_sandi"
             android:textColor="@color/black" />
 
     </com.google.android.material.textfield.TextInputLayout>

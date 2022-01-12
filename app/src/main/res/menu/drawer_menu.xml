@@ -5,7 +5,7 @@
 
         <item
             android:id="@+id/drawer_profile"
-            android:title="Profile"
+            android:title="Biodata"
             android:icon="@drawable/ic_baseline_account_circle_24"/>
 
         <item
@@ -15,18 +15,18 @@
 
         <item
             android:id="@+id/drawer_about"
-            android:title="About Us"
+            android:title="Tentang"
             android:icon="@drawable/ic_baseline_group_24"/>
         <item
             android:id="@+id/drawer_switch"
-            android:title="Switch Role"
+            android:title="Beralih Peran"
             android:icon="@drawable/ic_baseline_switch"/>
 
     </group>
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/drawer_logout"
-            android:title="Logout"
+            android:title="Keluar"
             android:icon="@drawable/ic_baseline_exit_to_app_24"/>
     </group>
 

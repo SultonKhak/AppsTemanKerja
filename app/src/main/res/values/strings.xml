@@ -3,7 +3,6 @@
     <string name="desc_wallpaper_screen">Wallpaper Screen</string>
     <string name="temankerja">TemanKerja</string>
     <string name="btn_masuk">Masuk</string>
-    <string name="daftar">Daftar</string>
     <string name="belum_punya_akun">Belum punya akun?</string>
     <string name="hint_nama_pengguna">Nama Pengguna</string>
     <string name="hint_email">Email</string>
@@ -43,12 +42,18 @@
     <string name="keterampilan">Keterampilan</string>
     <string name="save">Save</string>
     <string name="dot">...</string>
-    <string name="company_name">Nama Perusahaan</string>
-    <string name="company_type">Jenis Perusahaan</string>
-    <string name="jobdesk">Posisi Pekerjaan</string>
+    <string name="company_name">Nama Mitra</string>
+    <string name="company_type">Jenis Mitra</string>
+    <string name="jobdesk">Posisi</string>
     <string name="gaji">Gaji</string>
     <string name="work_schedule">Jadwal Kerja</string>
     <string name="deskripsi">Deskripsi</string>
+    <string name="simpan">Simpan</string>
+    <string name="upload">Upload</string>
+    <string name="unggah">Unggah</string>
+    <string name="nama_pengguna">Nama Pengguna</string>
+    <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
+    <string name="daftar">Daftar</string>
 
     <string-array name="sertifikasi_title">
         <item>Android Developer</item>

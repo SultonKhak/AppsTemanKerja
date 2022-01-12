@@ -206,10 +206,10 @@
 
                     <TextView
                         android:id="@+id/header_company_type"
-                        android:layout_width="0dp"
+                        android:layout_width="130dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter_bold"
-                        android:text="Jenis Perusahaan"
+                        android:text="Jenis Mitra"
                         android:textSize="14dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />

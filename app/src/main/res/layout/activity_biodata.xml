@@ -201,7 +201,7 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/btn_rounded"
-                android:text="Save"
+                android:text="@string/simpan"
                 android:layout_marginTop="20dp"
                 app:backgroundTint="@color/blue"
                 app:layout_constraintEnd_toEndOf="parent"
