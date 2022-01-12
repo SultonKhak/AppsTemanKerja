@@ -125,33 +125,28 @@ class CreateJobsActivity : AppCompatActivity(), View.OnClickListener {
                                                     binding.tvPosisiData.text.toString(),
                                                     downloadUri
                                                 )
-                                                viewModel.storeJobs(job)
-                                                viewModel.data.observe(this@CreateJobsActivity, {
-                                                    if (it.data != null) {
-                                                        Toast.makeText(
-                                                            this@CreateJobsActivity,
-                                                            "Berhasil menambahkan pekerjaan baru",
-                                                            Toast.LENGTH_SHORT
-                                                        ).show()
-                                                        startActivity(
-                                                            Intent(
+                                                if(validate()){
+                                                    viewModel.storeJobs(job)
+                                                    viewModel.data.observe(this@CreateJobsActivity, {
+                                                        if (it.data != null) {
+                                                            Toast.makeText(
                                                                 this@CreateJobsActivity,
-                                                                RecruiterActivity::class.java
+                                                                "Berhasil menambahkan pekerjaan baru",
+                                                                Toast.LENGTH_SHORT
+                                                            ).show()
+                                                            startActivity(
+                                                                Intent(
+                                                                    this@CreateJobsActivity,
+                                                                    RecruiterActivity::class.java
+                                                                )
                                                             )
-                                                        )
-                                                        finish()
-                                                    }
-                                                })
+                                                            finish()
+                                                        }
+                                                    })
+                                                }
                                             }
                                         }
                                     }
-                                }.addOnCompleteListener {
-                                    Toast.makeText(
-                                        this,
-                                        "Upload photo successfuly",
-                                        Toast.LENGTH_SHORT
-                                    )
-                                        .show()
                                 }.addOnFailureListener {
                                     Toast.makeText(
                                         this,
@@ -162,8 +157,6 @@ class CreateJobsActivity : AppCompatActivity(), View.OnClickListener {
                                 }
                             }
                         }
-                    }.addOnCompleteListener {
-                        Toast.makeText(this, "Upload photo successfuly", Toast.LENGTH_SHORT).show()
                     }
                 }else{
                     Toast.makeText(this, "Photo is required", Toast.LENGTH_SHORT).show()
@@ -181,6 +174,49 @@ class CreateJobsActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+    private fun validate(): Boolean {
+        val companyCategory = binding.tvCompanyCategoryData.text.toString()
+        val deskripsi = binding.tvDeskripsiData.text.toString()
+        val companyName =  binding.tvCompanyNameData.text.toString()
+        val gaji = binding.tvGajiData.text.toString()
+        val jadwalKerja = binding.tvJadwalKerjaData.text.toString()
+        val posisi = binding.tvPosisiData.text.toString()
+        when {
+            companyCategory == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            deskripsi == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            companyName == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            gaji == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            companyName == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            jadwalKerja == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            posisi == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+
+            else -> return true
+        }
+    }
+
+    private fun showToast(message: String) = Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
