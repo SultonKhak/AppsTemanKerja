@@ -33,6 +33,7 @@ class ResumeActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         job = intent.getParcelableExtra<Jobs>(DetailActivity.EXTRA_JOB) as Jobs
+        binding.userInclude.tvNavTitle.text = "Resume"
         binding.btnSend.setOnClickListener(this)
     }
 
