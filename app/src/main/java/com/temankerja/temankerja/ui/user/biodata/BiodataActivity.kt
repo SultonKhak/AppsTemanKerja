@@ -83,17 +83,19 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                         binding.tvSkillsData.text.toString(),
                         "",
                     )
-                    viewModel.updateBiodata(user)
-                    viewModel.dataUpdate.observe(this, {
-                        if (it.data != null) {
-                            Toast.makeText(
-                                this,
-                                "Data successfuly updated!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            startActivity(Intent(this, DetailBiodataActivity::class.java))
-                        }
-                    })
+                    if (validate()){
+                        viewModel.updateBiodata(user)
+                        viewModel.dataUpdate.observe(this, {
+                            if (it.data != null) {
+                                Toast.makeText(
+                                    this,
+                                    "Data successfuly updated!",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                startActivity(Intent(this, DetailBiodataActivity::class.java))
+                            }
+                        })
+                    }
                 }else{
                     val ref = storeRef.child("images/${uri.lastPathSegment}")
                     val uploadTask = ref.putFile(uri)
@@ -142,17 +144,18 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                                                 "",
                                                 downloadUri
                                             )
-                                            viewModel.updateBiodata(user)
-                                            viewModel.dataUpdate.observe(this, {
-                                                if (it.data != null) {
-                                                    Toast.makeText(
-                                                        this,
-                                                        "Data successfuly updated!",
-                                                        Toast.LENGTH_SHORT
-                                                    ).show()
 
-                                                }
-                                            })
+                                                viewModel.updateBiodata(user)
+                                                viewModel.dataUpdate.observe(this, {
+                                                    if (it.data != null) {
+                                                        Toast.makeText(
+                                                            this,
+                                                            "Data successfuly updated!",
+                                                            Toast.LENGTH_SHORT
+                                                        ).show()
+                                                    }
+                                                })
+
                                         }
                                     }
                                 }.addOnCompleteListener {
@@ -181,6 +184,41 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+    private fun validate(): Boolean {
+        val nama = binding.tvUsernameData.text.toString()
+        val alamat = binding.tvAddressData.text.toString()
+        val ktp = binding.tvNoKtpData.text.toString()
+        val telepon = binding.tvNoTelpData.text.toString()
+        val keterampilan = binding.tvSkillsData.text.toString()
+        when {
+            nama == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            alamat == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            ktp == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            telepon == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+            keterampilan == "" -> {
+                showToast("Field tidak boleh kosong")
+                return false
+            }
+
+            else -> return true
+        }
+    }
+
+    private fun showToast(message: String) = Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+
 
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        return when (item.itemId) {
