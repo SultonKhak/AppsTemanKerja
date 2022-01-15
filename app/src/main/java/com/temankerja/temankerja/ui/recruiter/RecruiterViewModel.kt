@@ -14,7 +14,7 @@ import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
-class RecruiterViewModel @Inject constructor(
+class                                                                                                       RecruiterViewModel @Inject constructor(
     private val repository: RecruiterRepository
 ) : ViewModel() {
     private val _searchStringLiveData = MutableLiveData<String>()

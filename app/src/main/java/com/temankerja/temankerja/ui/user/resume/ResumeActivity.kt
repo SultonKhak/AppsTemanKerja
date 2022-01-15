@@ -45,7 +45,7 @@ class ResumeActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         val resume = binding.inputResume.text.toString()
         if (TextUtils.isEmpty(resume)) {
-            Toast.makeText(this, "Resume tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Ringkasan tidak boleh kosong", Toast.LENGTH_SHORT).show()
         } else {
             when (v?.id) {
                 R.id.btn_send -> {

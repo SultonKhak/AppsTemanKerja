@@ -68,10 +68,10 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                             startActivity(this)
                         }
                     }else{
-                        showToast("Password tidak valid")
+                        showToast("Kata sandi tidak valid")
                     }
                 }else {
-                    showToast("Username tidak ditemukan")
+                    showToast("Nama pengguna tidak ditemukan")
                 }
             }
             .addOnFailureListener { exception ->

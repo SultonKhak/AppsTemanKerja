@@ -40,7 +40,7 @@ class ChangeActivity : AppCompatActivity(), View.OnClickListener {
                 if (binding.tvEmailData.text.toString() != "") {
                     if (!isValidEmail(binding.tvEmailData.text.toString())) {
                         isValid = false
-                        Toast.makeText(this, "Email not valid", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Email tidak valid", Toast.LENGTH_SHORT).show()
                     }
                 }
                 if (isValid) {
@@ -50,7 +50,7 @@ class ChangeActivity : AppCompatActivity(), View.OnClickListener {
                     )
                     viewModel.dataUpdate.observe(this, {
                         if (it.data != null) {
-                            Toast.makeText(this, "Successfuly updated", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Berhasil Diperbarui", Toast.LENGTH_SHORT).show()
                         }
                     })
                 }

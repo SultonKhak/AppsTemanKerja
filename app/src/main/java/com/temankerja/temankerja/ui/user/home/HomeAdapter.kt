@@ -20,7 +20,6 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.ListViewHolder>() {
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.setOnItemClickCallback = onItemClickCallback
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         return ListViewHolder(
             ListHomeBinding.inflate(

@@ -4,7 +4,7 @@ import androidx.annotation.Keep
 import com.google.firebase.firestore.PropertyName
 
 @Keep
-data class Users(
+data class  Users(
     var id: String? = "",
     var address: String? = "",
     var email: String? = "",

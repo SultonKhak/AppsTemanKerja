@@ -60,6 +60,7 @@
                         android:layout_marginStart="16dp"
                         android:fontFamily="@font/inter_regular"
                         android:text="@string/dot"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -72,7 +73,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter_bold"
                         android:text="@string/dot"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/tv_company_name"
@@ -86,6 +88,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="@string/dot"
                         android:textSize="16sp"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/tv_job_title"
@@ -113,6 +116,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/inter_bold"
                 android:text="Deskripsi"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/cardView"
                 app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -143,6 +147,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="@string/lorem_ipsum"
                         android:textSize="14sp"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -157,6 +162,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/inter_bold"
                 android:text="Informasi Tambahan"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/cardView2"
                 app:layout_constraintTop_toBottomOf="@+id/cardView2" />
@@ -191,6 +197,7 @@
                         android:fontFamily="@font/inter_bold"
                         android:text="Jadwal Kerja"
                         android:textSize="14dp"
+                        android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -201,6 +208,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="Senin - Jum'at"
                         android:textSize="14dp"
+                        android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="@+id/header_work_schedule"
                         app:layout_constraintTop_toBottomOf="@+id/header_work_schedule" />
 
@@ -211,6 +219,7 @@
                         android:fontFamily="@font/inter_bold"
                         android:text="Jenis Mitra"
                         android:textSize="14dp"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -221,6 +230,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="Tour and Travel Agency"
                         android:textSize="14dp"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/header_company_type"
                         app:layout_constraintTop_toBottomOf="@+id/header_company_type" />

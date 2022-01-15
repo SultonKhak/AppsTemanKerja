@@ -34,7 +34,7 @@ class SignUpActivity : AppCompatActivity() {
                     .get()
                     .addOnSuccessListener { documents ->
                         if (!documents.isEmpty) {
-                            showToast("Username sudah ada, silakan buat dengan username lain")
+                            showToast("Nama pengguna sudah ada, silakan buat dengan nama lain")
                         } else {
                             doRegister()
                         }
@@ -72,12 +72,12 @@ class SignUpActivity : AppCompatActivity() {
             .add(user)
             .addOnSuccessListener {
                 clearAllText()
-                Toast.makeText(this, "Register Berhasil", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Pendaftaran Berhasil", Toast.LENGTH_LONG).show()
             }
             .addOnFailureListener { e ->
                 Toast.makeText(
                     this,
-                    "Register Failed : " + e.localizedMessage,
+                    "Pendaftaran Gagal : " + e.localizedMessage,
                     Toast.LENGTH_LONG
                 ).show()
             }
@@ -90,7 +90,7 @@ class SignUpActivity : AppCompatActivity() {
         val emailData = binding.tvEmailData.text.toString()
         when {
             usernameData == "" -> {
-                showToast("Username tidak boleh kosong")
+                showToast("Nama pengguna tidak boleh kosong")
                 return false
             }
             emailData == "" -> {
