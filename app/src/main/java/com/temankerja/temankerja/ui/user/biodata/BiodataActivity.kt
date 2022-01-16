@@ -89,7 +89,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                             if (it.data != null) {
                                 Toast.makeText(
                                     this,
-                                    "Data successfuly updated!",
+                                    "Data berhasil diperbarui!",
                                     Toast.LENGTH_SHORT
                                 ).show()
                                 startActivity(Intent(this, DetailBiodataActivity::class.java))
@@ -117,7 +117,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                                 uploadTask.addOnFailureListener {
                                     Toast.makeText(
                                         this,
-                                        "Upload photo fail : ${it.localizedMessage}",
+                                        "Gagal mengunggah foto : ${it.localizedMessage}",
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }.addOnSuccessListener { taskSnapshot ->
@@ -150,7 +150,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                                                     if (it.data != null) {
                                                         Toast.makeText(
                                                             this,
-                                                            "Data successfuly updated!",
+                                                            "Data berhasil diperbarui!",
                                                             Toast.LENGTH_SHORT
                                                         ).show()
                                                     }
@@ -162,13 +162,13 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                                     Toast.makeText(this, "Update photo successfuly, please try to relogin for data changed", Toast.LENGTH_SHORT)
                                         .show()
                                 }.addOnFailureListener {
-                                    Toast.makeText(this, "Upload photo fail: ${it.localizedMessage}", Toast.LENGTH_SHORT)
+                                    Toast.makeText(this, "Gagal mengunggah foto: ${it.localizedMessage}", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
                         }
                     }.addOnCompleteListener {
-                        Toast.makeText(this, "Upload photo successfuly", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Berhasil mengunggah foto", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

@@ -98,7 +98,7 @@ class CreateJobsActivity : AppCompatActivity(), View.OnClickListener {
                                 uploadTask.addOnFailureListener {
                                     Toast.makeText(
                                         this,
-                                        "Upload photo fail : ${it.localizedMessage}",
+                                        "Gagal mengunggah foto : ${it.localizedMessage}",
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }.addOnSuccessListener { taskSnapshot ->
@@ -150,7 +150,7 @@ class CreateJobsActivity : AppCompatActivity(), View.OnClickListener {
                                 }.addOnFailureListener {
                                     Toast.makeText(
                                         this,
-                                        "Upload photo fail: ${it.localizedMessage}",
+                                        "Gagal mengunggah foto: ${it.localizedMessage}",
                                         Toast.LENGTH_SHORT
                                     )
                                         .show()
@@ -159,7 +159,7 @@ class CreateJobsActivity : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                 }else{
-                    Toast.makeText(this, "Photo is required", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Foto diperlukan", Toast.LENGTH_SHORT).show()
                 }
 
             }
@@ -184,31 +184,31 @@ class CreateJobsActivity : AppCompatActivity(), View.OnClickListener {
         val posisi = binding.tvPosisiData.text.toString()
         when {
             companyCategory == "" -> {
-                showToast("Field tidak boleh kosong")
+                showToast("Data tidak boleh kosong")
                 return false
             }
             deskripsi == "" -> {
-                showToast("Field tidak boleh kosong")
+                showToast("Data tidak boleh kosong")
                 return false
             }
             companyName == "" -> {
-                showToast("Field tidak boleh kosong")
+                showToast("Data tidak boleh kosong")
                 return false
             }
             gaji == "" -> {
-                showToast("Field tidak boleh kosong")
+                showToast("Data tidak boleh kosong")
                 return false
             }
             companyName == "" -> {
-                showToast("Field tidak boleh kosong")
+                showToast("Data tidak boleh kosong")
                 return false
             }
             jadwalKerja == "" -> {
-                showToast("Field tidak boleh kosong")
+                showToast("Data tidak boleh kosong")
                 return false
             }
             posisi == "" -> {
-                showToast("Field tidak boleh kosong")
+                showToast("Data tidak boleh kosong")
                 return false
             }
 
