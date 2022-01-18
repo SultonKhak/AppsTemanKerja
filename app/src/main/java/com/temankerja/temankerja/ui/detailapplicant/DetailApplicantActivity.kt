@@ -11,6 +11,7 @@ import com.temankerja.temankerja.R
 import com.temankerja.temankerja.databinding.ActivityDetailApplicantBinding
 import com.temankerja.temankerja.models.JobsApplicants
 import com.temankerja.temankerja.ui.success.SuccessActivity
+import com.temankerja.temankerja.ui.success.SuccessActivityRecruiter
 import com.temankerja.temankerja.utils.StatusBar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -77,7 +78,7 @@ class DetailApplicantActivity : AppCompatActivity(), View.OnClickListener {
                 viewModel.data.observe(this, {
                     if(it.data != null) {
                         Intent(this, SuccessActivity::class.java).apply {
-                            putExtra(SuccessActivity.EXTRA_IS_RECRUITER, true)
+                            putExtra(SuccessActivityRecruiter.EXTRA_IS_RECRUITER, true)
                             startActivity(this)
                         }
                         finish()
