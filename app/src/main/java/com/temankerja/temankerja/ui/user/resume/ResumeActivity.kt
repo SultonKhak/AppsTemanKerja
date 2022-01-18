@@ -60,7 +60,7 @@ class ResumeActivity : AppCompatActivity(), View.OnClickListener {
                     viewModel.data.observe(this, {
                         if (it.data != null) {
                             startActivity(Intent(this, SuccessActivity::class.java))
-                            intent.putExtra(SuccessActivity.EXTRA_IS_RECRUITER, false)
+                            intent.putExtra(SuccessActivity.EXTRA_IS_APPLY, false)
                             finish()
                         }
                     })
