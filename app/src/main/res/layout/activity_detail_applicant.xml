@@ -239,7 +239,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btn_apply"
+        android:id="@+id/btn_apply_rekrut"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

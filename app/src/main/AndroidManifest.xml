@@ -30,6 +30,9 @@
             android:name=".ui.success.SuccessActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.success.SuccessActivityRecruiter"
+            android:exported="false" />
+        <activity
             android:name=".ui.user.resume.ResumeActivity"
             android:exported="false" />
         <activity

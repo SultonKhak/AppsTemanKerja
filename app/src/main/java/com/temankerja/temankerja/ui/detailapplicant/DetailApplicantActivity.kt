@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide
 import com.temankerja.temankerja.R
 import com.temankerja.temankerja.databinding.ActivityDetailApplicantBinding
 import com.temankerja.temankerja.models.JobsApplicants
-import com.temankerja.temankerja.ui.success.SuccessActivity
 import com.temankerja.temankerja.ui.success.SuccessActivityRecruiter
 import com.temankerja.temankerja.utils.StatusBar
 import dagger.hilt.android.AndroidEntryPoint
@@ -63,7 +62,7 @@ class DetailApplicantActivity : AppCompatActivity(), View.OnClickListener {
                     .into(imgApplicantProfile)
             }
         }
-        binding.btnApply.setOnClickListener(this)
+        binding.btnApplyRekrut.setOnClickListener(this)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -73,11 +72,11 @@ class DetailApplicantActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when(v?.id) {
-            R.id.btn_apply -> {
+            R.id.btn_apply_rekrut -> {
                 viewModel.doRecruit(id)
                 viewModel.data.observe(this, {
                     if(it.data != null) {
-                        Intent(this, SuccessActivity::class.java).apply {
+                        Intent(this, SuccessActivityRecruiter::class.java).apply {
                             putExtra(SuccessActivityRecruiter.EXTRA_IS_RECRUITER, true)
                             startActivity(this)
                         }
