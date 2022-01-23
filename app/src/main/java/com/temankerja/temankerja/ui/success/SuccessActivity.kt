@@ -19,13 +19,13 @@ class SuccessActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val isApply = intent.getBooleanExtra(EXTRA_IS_APPLY, false)
-        if (isApply) {
-            binding.btnBack.setOnClickListener {
+        if (!isApply) {
+            binding.btnBackLamar.setOnClickListener {
                 startActivity(Intent(this, UserActivity::class.java))
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             }
-            binding.btnBack.setBackgroundColor(resources.getColor(R.color.purple))
-            binding.tvLabelSuccess.text = "Lamaran telah dikirim"
+            binding.btnBackLamar.setBackgroundColor(resources.getColor(R.color.blue))
+            binding.tvLabelSuccess.text = "Lamaran Berhasil Dikirim"
         }
     }
 
