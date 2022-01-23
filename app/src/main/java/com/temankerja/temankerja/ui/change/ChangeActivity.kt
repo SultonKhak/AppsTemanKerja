@@ -23,7 +23,7 @@ class ChangeActivity : AppCompatActivity(), View.OnClickListener {
         setSupportActionBar(findViewById(R.id.toolbar2))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        binding.userInclude.tvNavTitle.text = "Setting"
+        binding.userInclude.tvNavTitle.text = "Pengaturan"
         binding.btnChange.setOnClickListener(this)
     }
 
