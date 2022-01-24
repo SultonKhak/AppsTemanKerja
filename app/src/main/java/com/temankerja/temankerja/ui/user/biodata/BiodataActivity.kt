@@ -47,6 +47,8 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
             if (it.data != null) {
                 id = it.data!!.id!!
                 binding.apply {
+                    if(it.data?.gender == "Laki-Laki") radioLaki.isChecked = true
+                    else radioPerempuan.isChecked = true
                     tvUsernameData.setText(it.data?.fullname)
                     tvAddressData.setText(it.data?.address)
                     tvNoKtpData.setText(it.data?.noKtp)
@@ -76,7 +78,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                         binding.tvAddressData.text.toString(),
                         "",
                         binding.tvUsernameData.text.toString(),
-                        "Laki-Laki",
+                        if(binding.radioLaki.isChecked) "Laki-Laki" else "Perempuan",
                         binding.tvNoKtpData.text.toString(),
                         "",
                         binding.tvNoTelpData.text.toString(),
@@ -136,7 +138,7 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                                                 binding.tvAddressData.text.toString(),
                                                 "",
                                                 binding.tvUsernameData.text.toString(),
-                                                "Laki-Laki",
+                                                if(binding.radioLaki.isChecked) "Laki-Laki" else "Perempuan",
                                                 binding.tvNoKtpData.text.toString(),
                                                 "",
                                                 binding.tvNoTelpData.text.toString(),
@@ -145,17 +147,16 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
                                                 downloadUri
                                             )
 
-                                                viewModel.updateBiodata(user)
-                                                viewModel.dataUpdate.observe(this, {
-                                                    if (it.data != null) {
-                                                        Toast.makeText(
-                                                            this,
-                                                            "Data berhasil diperbarui!",
-                                                            Toast.LENGTH_SHORT
-                                                        ).show()
-                                                    }
-                                                })
-
+                                            viewModel.updateBiodata(user)
+                                            viewModel.dataUpdate.observe(this, {
+                                                if (it.data != null) {
+                                                    Toast.makeText(
+                                                        this,
+                                                        "Data berhasil diperbarui!",
+                                                        Toast.LENGTH_SHORT
+                                                    ).show()
+                                                }
+                                            })
                                         }
                                     }
                                 }.addOnCompleteListener {
