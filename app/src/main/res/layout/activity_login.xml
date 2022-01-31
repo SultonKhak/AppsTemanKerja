@@ -35,7 +35,7 @@
             android:id="@+id/tv_username_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nama_pengguna"
+            android:hint="@string/hint_nama_pengguna"
             android:textColor="@color/black" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -57,7 +57,7 @@
             android:id="@+id/tv_password_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/kata_sandi"
+            android:hint="@string/hint_kata_sandi"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
