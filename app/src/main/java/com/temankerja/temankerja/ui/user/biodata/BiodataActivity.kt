@@ -43,25 +43,25 @@ class BiodataActivity : AppCompatActivity(), View.OnClickListener {
         binding.userInclude.tvNavTitle.text = "Biodata"
         binding.btnSave.setOnClickListener(this)
         binding.tvUpload.setOnClickListener(this)
-        viewModel.data.observe(this, {
+        viewModel.data.observe(this) {
             if (it.data != null) {
                 id = it.data!!.id!!
                 binding.apply {
-                    if(it.data?.gender == "Laki-Laki") radioLaki.isChecked = true
+                    if (it.data?.gender == "Laki-Laki") radioLaki.isChecked = true
                     else radioPerempuan.isChecked = true
                     tvUsernameData.setText(it.data?.fullname)
                     tvAddressData.setText(it.data?.address)
                     tvNoKtpData.setText(it.data?.noKtp)
                     tvNoTelpData.setText(it.data?.phone)
                     tvSkillsData.setText(it.data?.skills)
-                    if(it.data?.photo != null) {
+                    if (it.data?.photo != null) {
                         Glide.with(this@BiodataActivity)
                             .load(it.data?.photo)
                             .into(binding.imgProfile)
                     }
                 }
             }
-        })
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
