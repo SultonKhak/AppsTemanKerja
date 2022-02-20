@@ -22,11 +22,11 @@ class NotificationActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
         binding.userInclude.tvNavTitle.text = "Notifikasi"
         setupRv()
-        viewModel.data.observe(this, {
+        viewModel.data.observe(this) {
             if (it.data != null) {
                 adapter.setNotificationData(it.data!!)
             }
-        })
+        }
     }
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

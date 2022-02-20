@@ -34,9 +34,9 @@ class HomeFragment : Fragment() {
         setupRv()
         activity?.let {
             runBlocking {
-                viewModel.jobsList.observe(viewLifecycleOwner, {
+                viewModel.jobsList.observe(viewLifecycleOwner) {
                     it.data?.let { data -> adapter.setJobsData(data) }
-                })
+                }
             }
         }
         adapter.setOnItemClickCallback(object : HomeAdapter.OnItemClickCallback {

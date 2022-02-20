@@ -48,11 +48,11 @@ class ChangeActivity : AppCompatActivity(), View.OnClickListener {
                         binding.tvEmailData.text.toString(),
                         binding.tvPasswordData.text.toString()
                     )
-                    viewModel.dataUpdate.observe(this, {
+                    viewModel.dataUpdate.observe(this) {
                         if (it.data != null) {
                             Toast.makeText(this, "Berhasil Diperbarui", Toast.LENGTH_SHORT).show()
                         }
-                    })
+                    }
                 }
 
             }

@@ -57,13 +57,13 @@ class ResumeActivity : AppCompatActivity(), View.OnClickListener {
                         binding.inputResume.text.toString()
                     )
                     viewModel.storeApplicant(applicant)
-                    viewModel.data.observe(this, {
+                    viewModel.data.observe(this) {
                         if (it.data != null) {
                             startActivity(Intent(this, SuccessActivity::class.java))
                             intent.putExtra(SuccessActivity.EXTRA_IS_APPLY, false)
                             finish()
                         }
-                    })
+                    }
                 }
             }
         }

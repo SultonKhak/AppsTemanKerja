@@ -38,9 +38,9 @@ class InformasiFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupRv()
         activity?.let {
-            viewModel.data.observe(it, {
+            viewModel.data.observe(it) {
                 it.data?.let { data -> adapter.setInformationData(data) }
-            })
+            }
         }
         adapter.setOnItemClickCallback(object : InformasiAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Information) {

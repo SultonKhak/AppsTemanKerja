@@ -37,9 +37,11 @@ class SertifikasiFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupRv()
         activity?.let {
-            viewModel.data.observe(it, {
-                it.data?.let { data -> adapter.setSertifikasiData(data) }
-            })
+            with(viewModel) {
+                data.observe(it) {
+                    it.data?.let { data -> adapter.setSertifikasiData(data) }
+                }
+            }
         }
         adapter.setOnItemClickCallback(object : SertifikasiAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Sertifikasi) {

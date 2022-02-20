@@ -74,15 +74,15 @@ class DetailApplicantActivity : AppCompatActivity(), View.OnClickListener {
         when(v?.id) {
             R.id.btn_apply_rekrut -> {
                 viewModel.doRecruit(id)
-                viewModel.data.observe(this, {
-                    if(it.data != null) {
+                viewModel.data.observe(this) {
+                    if (it.data != null) {
                         Intent(this, SuccessActivityRecruiter::class.java).apply {
                             putExtra(SuccessActivityRecruiter.EXTRA_IS_RECRUITER, true)
                             startActivity(this)
                         }
                         finish()
                     }
-                })
+                }
             }
         }
     }

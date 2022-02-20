@@ -28,11 +28,11 @@ class ApplicantsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
         binding.userInclude.tvNavTitle.text = "Pelamar"
         setupRv()
-        viewModel.data.observe(this, {
-            if(it.data != null) {
+        viewModel.data.observe(this) {
+            if (it.data != null) {
                 adapter.setApplicantData(it.data!!)
             }
-        })
+        }
         adapter.setOnItemClickCallback(object: ApplicantsAdapter.OnItemClickCallback {
             override fun onItemClicked(data: JobsApplicants) {
                 selectedData(data)

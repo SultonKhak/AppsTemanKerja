@@ -99,9 +99,9 @@ class RecruiterActivity : AppCompatActivity(), View.OnClickListener {
 
         setupRv()
         runBlocking {
-            viewModel.jobsList.observe(this@RecruiterActivity, {
+            viewModel.jobsList.observe(this@RecruiterActivity) {
                 it.data?.let { data -> adapter.setJobsData(data) }
-            })
+            }
         }
 
         binding.textInputSearch.addTextChangedListener {

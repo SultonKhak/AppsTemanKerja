@@ -28,8 +28,8 @@ class DetailBiodataActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnUpdate.setOnClickListener(this)
         viewModel.let {
             it.getDetailBiodata()
-            it.data.observe(this, {
-                if(it.e==null) {
+            it.data.observe(this) {
+                if (it.e == null) {
                     binding.apply {
                         tvFullName.text = it.data?.fullname
                         tvLoc.text = it.data?.address
@@ -37,14 +37,14 @@ class DetailBiodataActivity : AppCompatActivity(), View.OnClickListener {
                         tvNoKtp.text = it?.data?.noKtp
                         tvNoTelp.text = it?.data?.phone
                         tvKeterampilan.text = it?.data?.skills
-                        if(it.data?.photo != null) {
+                        if (it.data?.photo != null) {
                             Glide.with(this@DetailBiodataActivity)
                                 .load(it.data?.photo)
                                 .into(binding.imgProfile)
                         }
                     }
                 }
-            })
+            }
         }
     }
 

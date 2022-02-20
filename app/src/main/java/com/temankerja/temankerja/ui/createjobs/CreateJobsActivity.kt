@@ -127,7 +127,7 @@ class CreateJobsActivity : AppCompatActivity(), View.OnClickListener {
                                                 )
                                                 if(validate()){
                                                     viewModel.storeJobs(job)
-                                                    viewModel.data.observe(this@CreateJobsActivity, {
+                                                    viewModel.data.observe(this@CreateJobsActivity) {
                                                         if (it.data != null) {
                                                             Toast.makeText(
                                                                 this@CreateJobsActivity,
@@ -142,7 +142,7 @@ class CreateJobsActivity : AppCompatActivity(), View.OnClickListener {
                                                             )
                                                             finish()
                                                         }
-                                                    })
+                                                    }
                                                 }
                                             }
                                         }
